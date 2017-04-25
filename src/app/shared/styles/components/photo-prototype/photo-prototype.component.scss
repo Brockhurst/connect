@@ -1,0 +1,13 @@
+.ab-photo-prototype {
+  display: inline-block;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  border: .2rem solid white;
+
+  &__bg {
+    height: 100%;
+    border-radius: 50%;
+    background: gray center/cover no-repeat;
+  }
+}

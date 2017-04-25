@@ -1,0 +1,29 @@
+<span
+  class="ab-editable__text {{textClassName}}"
+  #editableElement
+  contentEditable="{{isEditable}}">
+
+  {{text}}
+</span>
+<button
+  (click)="handleEnableEdit(editableElement)"
+  *ngIf="!isEditable"
+  class="ab-editable__enable ab-clickable">
+
+  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+</button>
+<div
+  *ngIf="isEditable"
+  class="ab-editable__actions">
+
+  <button
+    (click)="handleClearClick(editableElement)"
+    class="ab-clickable">
+    <img src="/assets/scalable/clear.svg" alt="clear">
+  </button>
+  <button
+    (click)="handleApplyClick(editableElement)"
+    class="ab-clickable">
+    <img src="/assets/scalable/apply.svg" alt="apply">
+  </button>
+</div>

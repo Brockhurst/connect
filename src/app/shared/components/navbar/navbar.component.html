@@ -1,0 +1,30 @@
+<div class="ab-container ab-navbar__container">
+  <div class="ab-navbar__left">
+    <div class="ab-navbar__brand">
+      <a class="ab-link" [routerLink]="['/profile', 'me']">
+        CONNECT
+      </a>
+    </div>
+    <div class="ab-navbar__brand">
+      <a class="ab-link" [routerLink]="['/friends']">
+        Friends
+      </a>
+    </div>
+    <div class="ab-navbar__brand">
+      <a class="ab-link" [routerLink]="['/lessons']">
+        Lessons
+      </a>
+    </div>
+  </div>
+  <div class="ab-navbar__right">
+    <div class="ab-navbar__search">
+      <ab-search></ab-search>
+    </div>
+    <div class="ab-navbar__photo">
+      <ab-photo src="assets/img/sample-photo-1.jpg"></ab-photo>
+    </div>
+    <a class="ab-link ab-navbar__menu" href="#">
+      <img class="ab-navbar__arrow" src="/assets/scalable/down-arrow.svg" alt="">
+    </a>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+@import '~variables';
+
+.cn-assign-lesson-page {
+
+  .step {
+    padding: 20px 10px;
+  }
+
+  .cn-employee {
+    display: flex;
+    align-items: center;
+
+    .ab-photo {
+      width: 5em;
+      height: 5em;
+    }
+  }
+}

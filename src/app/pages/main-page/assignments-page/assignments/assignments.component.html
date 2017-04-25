@@ -1,0 +1,9 @@
+<ul class="ab-list ab-assignments__list">
+  <li
+    *ngFor="let assignment of assignments"
+    class="ab-list__item ab-assignments__item">
+    <ab-assignment
+      [assignment]="assignment">
+    </ab-assignment>
+  </li>
+</ul>

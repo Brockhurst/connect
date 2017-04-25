@@ -1,0 +1,31 @@
+@import '~variables';
+
+.ab-check-item {
+  display: block;
+  position: relative;
+
+  &__info {
+    display: inline-block;
+    vertical-align: .3rem;
+    margin: 0 0 0 1rem;
+    color: $dark-gray-color;
+    font: {
+      size: 1.4rem;
+      weight: 600;
+    }
+  }
+
+  &__type {
+    margin: 0 .4rem 0 0;
+  }
+
+  &__update-counter {
+    position: absolute;
+    top: -.5rem;
+    right: -1.2rem;
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+}

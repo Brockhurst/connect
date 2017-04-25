@@ -1,0 +1,20 @@
+@import '~variables';
+
+.ab-footer {
+  display: block;
+  height: 4rem;
+  background: $brand-gray-color;
+  text-align: center;
+  color: $dark-gray-color;
+  font-size: 1.2rem;
+
+  &__container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin: .5rem 2rem 0 0;
+  }
+}

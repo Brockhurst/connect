@@ -1,0 +1,7 @@
+<ul class="ab-list ab-employees__list">
+  <li class="ab-list__item ab-employees__item" *ngFor="let employee of employees">
+    <a class="ab-link" href="#">
+      <ab-avatar fullName="{{employee.name}}" photoSrc="{{employee.imgUrl}}"></ab-avatar>
+    </a>
+  </li>
+</ul>

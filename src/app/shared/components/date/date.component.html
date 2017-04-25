@@ -1,0 +1,11 @@
+<div
+  class="ab-date__control"
+  [ngClass]="{ 'ab-date__control_set': isSet }">
+
+  <my-date-picker
+    [(ngModel)]="date"
+    [options]="myDatePickerOptions"
+    (dateChanged)="onDateChanged($event)"
+    placeholder="mm/dd/yyyy">
+  </my-date-picker>
+</div>

@@ -1,0 +1,26 @@
+<div class="ab-period__label">From</div>
+<div class="ab-period__from-date">
+  <ab-date
+    [date]="startDate"
+    (dateChange)="onStartDateChange($event)">
+  </ab-date>
+  <div class="ab-period__check">
+    <ab-check-item
+      type="Now"
+      typeClassName="ab-period__label">
+    </ab-check-item>
+  </div>
+</div>
+<div class="ab-period__label">to</div>
+<div class="ab-period__to-date">
+  <ab-date
+    [date]="endDate"
+    (dateChange)="onEndDateChange($event)">
+  </ab-date>
+  <div class="ab-period__check">
+    <ab-check-item
+      type="Endless"
+      typeClassName="ab-period__label">
+    </ab-check-item>
+  </div>
+</div>

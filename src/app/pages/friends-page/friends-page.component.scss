@@ -1,0 +1,12 @@
+@import '~variables';
+
+.cn-friends-page {
+  li {
+    border-bottom: 1px solid $semi-gray-color;
+    padding: 5px 0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

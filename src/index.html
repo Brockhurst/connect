@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html class="ab-page">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/vendors/jquery-ui.min.css" rel="stylesheet">
+
+  <title><%= htmlWebpackPlugin.options.title %></title>
+
+  <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
+
+  <% if (webpackConfig.htmlElements.headTags) { %>
+  <!-- Configured Head Tags  -->
+  <%= webpackConfig.htmlElements.headTags %>
+  <% } %>
+
+  <!-- base url -->
+  <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <style>
+    .ab-spinner {
+      padding: 20rem 0;
+    }
+
+    .ab-spinner__element {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto;
+      background-color: #333;
+      border-radius: 100%;
+      animation: ab-spinner__anim 1.0s infinite ease-in-out;
+    }
+
+    @keyframes ab-spinner__anim {
+      0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+      }
+
+      100% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+        opacity: 0;
+      }
+    }
+  </style>
+
+</head>
+
+<body class="ab-page__inner">
+
+  <ab-app>
+    <div class="ab-spinner">
+      <div class="ab-spinner__element"></div>
+    </div>
+  </ab-app>
+
+  <% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>
+  <!-- Webpack Dev Server reload -->
+  <script src="/webpack-dev-server.js"></script>
+  <% } %>
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="./assets/vendors/jquery-ui.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>

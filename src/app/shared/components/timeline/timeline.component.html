@@ -1,0 +1,48 @@
+<div class="ab-timeline__era ab-timeline__era_transparent">
+  <div
+    *ngFor="let block of dateTitleBlocks;"
+    class="ab-timeline__block"
+    [ngStyle]="{ 'flex-grow': block.partial }">
+    <div
+      class="ab-timeline__era-block"
+      [ngStyle]="{
+          width: block.eraPercentage + '%',
+          float: block.firstEraBlock ? 'right' : 'left'
+      }">
+      <span
+        class="ab-timeline__title"
+        [ngStyle]="{ right: block.firstEraBlock ? 'initial' : 0 }">
+        {{block.displayDate}}
+      </span>
+    </div>
+  </div>
+</div>
+<div
+  *ngFor="let era of eraBlocksConfig">
+  <div
+    *ngFor="let i of timelineService.repeatWeight(era.weight)"
+    class="ab-timeline__era">
+    <div
+      *ngFor="let block of era.blocksConfig;"
+      class="ab-timeline__block"
+      [ngStyle]="{ 'flex-grow': block.partial }">
+      <div
+        [ngClass]="[era.cssClass, 'ab-timeline__era-block']"
+        [ngStyle]="{
+          width: block.eraPercentage + '%',
+          float: block.firstEraBlock ? 'right' : 'left'
+        }">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ab-timeline__era ab-timeline__era_transparent">
+  <div
+    *ngFor="let block of monthTitleBlocks"
+    class="ab-timeline__block"
+    [ngStyle]="{
+      'flex-grow': block.partial
+    }">
+    <span class="ab-timeline__title">{{block.monthName}}</span>
+  </div>
+</div>

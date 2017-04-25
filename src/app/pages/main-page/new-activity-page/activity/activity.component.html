@@ -1,0 +1,56 @@
+<header class="ab-activity__header">
+  <div class="ab-activity__info">
+    <div class="ab-activity__type-select">
+      <ab-dropdown
+        defaultText="TYPE"
+        buttonClassName="ab-activity__dropdown-button"
+        [items]="types">
+      </ab-dropdown>
+    </div>
+    <ab-editable
+      text="PROJECT NAME"
+      textClassName="ab-activity__editable-text">
+    </ab-editable>
+  </div>
+  <ab-actions actionClassName="ab-activity__action"></ab-actions>
+</header>
+<section class="ab-activity__desc">
+  <ab-editable text="Add description"></ab-editable>
+</section>
+<section class="ab-activity__tags">
+  <ab-tags></ab-tags>
+</section>
+<section class="ab-activity__stats">
+  <div class="ab-activity__period">
+    <ab-period
+      [(startDate)]="startDatePeriod"
+      [(endDate)]="endDatePeriod">
+    </ab-period>
+  </div>
+  <div class="ab-activity__weight">
+    <span class="ab-activity__weight-sign ab-activity__weight-style">
+      Weight
+    </span>
+    <ab-dropdown
+      buttonClassName="ab-activity__weight-style"
+      [items]="weights">
+    </ab-dropdown>
+  </div>
+</section>
+<section class="ab-activity__timeline">
+  <ab-timeline
+    [dataSeries]="timeline"
+    [endDate]="timelineEndDate"
+    [startDate]="timelineStartDate">
+  </ab-timeline>
+</section>
+<section class="ab-activity__actions">
+  <button
+    class="ab-button ab-button_neutral">
+    CANCEL
+  </button>
+  <button
+    class="ab-button ab-activity__save">
+    SAVE
+  </button>
+</section>

@@ -1,0 +1,23 @@
+@import '~variables';
+
+.ab-checkbox {
+  position: relative;
+  display: inline-block;
+
+  &__rect {
+    border: 1px solid $semi-gray-color;
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  &__input {
+    position: absolute;
+    z-index: 100;
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked + .ab-checkbox__rect {
+      background: url('/assets/scalable/check.svg') center center no-repeat;
+    }
+  }
+}

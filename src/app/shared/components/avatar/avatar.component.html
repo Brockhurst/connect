@@ -1,0 +1,11 @@
+<div class="ab-avatar-prototype__photo">
+  <ab-photo src="{{photoSrc}}"></ab-photo>
+</div>
+<div class="ab-avatar-prototype__info">
+  <h4
+    class="ab-avatar-prototype__name"
+    [ngClass]="{ 'ab-avatar-prototype__name_tall': !currentRole }">
+    {{fullName}}
+  </h4>
+  <h5 class="ab-avatar-prototype__role">{{currentRole}}</h5>
+</div>

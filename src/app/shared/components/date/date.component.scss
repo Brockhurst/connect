@@ -1,0 +1,55 @@
+@import '~variables';
+
+.ab-date {
+  .mydp {
+    max-width: 13rem;
+    border: 0 none;
+
+    .btnpicker {
+      border: 0 none;
+      margin: .5rem 0 0 0;
+      background: transparent url('/assets/scalable/calendar.svg') no-repeat center center;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: transparent url('/assets/scalable/calendar.svg') no-repeat center center;
+      }
+
+      .icon {
+        display: none;
+      }
+    }
+
+    .selection {
+      margin: .2rem 0 0 0;
+      text-align: left;
+      color: $neutral-gray-color;
+      font: normal normal 1.6rem $primary-font-family;
+    }
+  }
+
+  &__control {
+    &_set {
+      .mydp {
+        max-width: 12rem;
+
+        .btnpicker {
+          border: 0 none;
+          margin: .5rem 0 0 0;
+          background: transparent url('/assets/scalable/calendar-active.svg') no-repeat center center;
+
+          &:hover,
+          &:active,
+          &:focus {
+            background: transparent url('/assets/scalable/calendar-active.svg') no-repeat center center;
+          }
+        }
+
+        .selection {
+          color: $brand-cyan-color;
+        }
+      }
+    }
+  }
+}

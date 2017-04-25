@@ -1,0 +1,19 @@
+<div
+  class="ab-dropdown__control"
+  [ngClass]="{ 'ab-dropdown__control_open': isOpen }">
+  <button
+    class="ab-dropdown__button {{selectedItem.className}} {{buttonClassName}}"
+    (click)="handleClick()">
+
+    {{selectedItem.text}}
+  </button>
+  <ul class="ab-dropdown__list ab-list">
+    <li
+      *ngFor="let item of items"
+      (click)="handleSelect(item)"
+      class="ab-dropdown__item {{item.className}}">
+
+      {{item.text}}
+    </li>
+  </ul>
+</div>

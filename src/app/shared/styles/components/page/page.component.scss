@@ -1,0 +1,14 @@
+.ab-page {
+  height: 100%;
+  font: normal normal 8px $primary-font-family;
+  color: #333;
+
+  @media only screen and (min-width: $normal-device-width) {
+    font-size: 10px;
+  }
+
+  &__inner {
+    height: 100%;
+    margin: 0;
+  }
+}

@@ -1,0 +1,19 @@
+<label class="ab-check-item__label">
+  <ab-checkbox [checked]="checked"></ab-checkbox>
+  <div class="ab-check-item__info">
+  <span
+    class="ab-check-item__type ab-type ab-type_{{type.toLowerCase()}} {{typeClassName}}">
+
+    {{type}}
+  </span>
+    <span
+      *ngIf="count !== undefined"
+      class="ab-check-item__count">
+
+    {{count}}
+  </span>
+  </div>
+</label>
+<div class="ab-check-item__update-counter">
+  <ab-update-counter number="{{updateCount}}"></ab-update-counter>
+</div>

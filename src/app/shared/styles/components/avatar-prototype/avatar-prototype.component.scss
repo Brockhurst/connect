@@ -1,0 +1,27 @@
+.ab-avatar-prototype {
+  text-align: center;
+  display: block;
+
+  &__name {
+    margin: .4rem 0 0 0;
+    color: $devil-gray-color;
+    font: {
+      weight: 600;
+      size: 1.2rem;
+    }
+
+    &_tall {
+      word-spacing: 9999rem;
+    }
+  }
+
+  &__role {
+    font: {
+      weight: normal;
+      size: 1.2rem;
+    }
+    margin: .1rem 0 0 0;
+    color: $devil-gray-color;
+    text-transform: capitalize;
+  }
+}

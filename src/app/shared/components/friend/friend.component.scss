@@ -1,0 +1,24 @@
+@import '~variables';
+
+.cn-friend {
+  display: block;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__name {
+    display: inline-block;
+    vertical-align: top;
+
+    h3 {
+      margin-top: 10px;
+    }
+  }
+
+  .ab-photo-prototype {
+    width: 8rem;
+    height: 8rem;
+  }
+}

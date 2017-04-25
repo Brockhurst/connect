@@ -1,0 +1,24 @@
+.ab-button {
+  text-decoration: none;
+  background: $brand-green-color;
+  color: white;
+  font: normal bold 1.2rem $secondary-font-family;
+  padding: .6rem 1.8rem;
+  border: 0 none;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+    background: $dark-green-color;
+  }
+
+  &_neutral {
+    background: $light-gray-color;
+    color: $devil-gray-color;
+
+    &:hover,
+    &:active {
+      background: $neutral-gray-color;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<ul class="ab-list">
+  <li class="ab-list__item ab-link-bar__item" *ngFor="let link of links">
+    <a
+      class="ab-link ab-link-bar__link"
+      [ngClass]="{ 'ab-link-bar__link_active': link.active }"
+      href="{{link.href}}">
+      {{link.text}}
+    </a>
+  </li>
+</ul>

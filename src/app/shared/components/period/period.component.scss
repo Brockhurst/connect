@@ -1,0 +1,21 @@
+@import '~variables';
+
+.ab-period {
+  display: inline-flex;
+  align-items: baseline;
+
+  &__from-date {
+    margin: 0 1.8rem 0 0;
+  }
+
+  &__label {
+    font-size: 1.6rem;
+    color: $devil-gray-color;
+    margin: 0 1rem 0 0;
+    font-weight: normal;
+  }
+
+  &__check {
+    padding: 1.3rem 0 0 1rem;
+  }
+}

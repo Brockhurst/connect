@@ -1,0 +1,33 @@
+<aside class="ab-main-page__left ab-main-page__part">
+  <header class="ab-main-page__tools">
+    <div class="ab-container ab-toolbar">
+      <ab-filter></ab-filter>
+    </div>
+    <div class="ab-main-page__line"></div>
+    <div class="ab-container">
+      <ab-assignments-bar></ab-assignments-bar>
+    </div>
+  </header>
+  <perfect-scrollbar class="ab-main-page__content ab-container ab-main-page__container">
+    <router-outlet name="assignments"></router-outlet>
+  </perfect-scrollbar>
+</aside>
+<aside class="ab-main-page__right ab-main-page__part">
+  <header class="ab-main-page__tools">
+    <div class="ab-container">
+      <ab-title-bar
+        heading="DSED SOLUTIONS"
+        subheading="76 employees">
+      </ab-title-bar>
+    </div>
+    <div class="ab-main-page__line ab-main-page__line_plain"></div>
+    <div class="ab-container">
+      <ab-employees-bar></ab-employees-bar>
+    </div>
+  </header>
+  <div class="ab-container ab-main-page__container ab-main-page__frame-container">
+    <perfect-scrollbar class="ab-main-page__content ab-main-page__frame">
+      <router-outlet name="employees"></router-outlet>
+    </perfect-scrollbar>
+  </div>
+</aside>

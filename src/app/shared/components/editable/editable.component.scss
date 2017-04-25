@@ -1,0 +1,23 @@
+@import '~variables';
+
+.ab-editable {
+  display: inline-block;
+  color: $devil-gray-color;
+  font-size: 1.4rem;
+
+  &__enable {
+    color: $lighter-gray-color;
+    font-size: 1.3rem;
+    margin: 0 0 0 .6rem;
+  }
+
+  &__actions {
+    margin: 0 0 0 1rem;
+    letter-spacing: .3rem;
+    display: inline-block;
+  }
+
+  &__text {
+    outline: none;
+  }
+}

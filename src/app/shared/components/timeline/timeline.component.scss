@@ -1,0 +1,42 @@
+@import '~variables';
+
+.ab-timeline {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 6rem;
+
+  &__era {
+    display: flex;
+    flex-direction: row;
+    margin: 0.1rem 0;
+    background: $brand-blue-color;
+
+    &_transparent {
+      background: none;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    line-height: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $devil-gray-color;
+  }
+
+  &__block {
+    height: 10px;
+    margin-left: 1px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__era-block {
+    position: relative;
+    height: 100%;
+  }
+
+}

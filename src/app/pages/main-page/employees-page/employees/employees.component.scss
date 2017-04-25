@@ -1,0 +1,32 @@
+@import '~variables';
+@import '~susy';
+
+.ab-employees {
+  display: block;
+  padding: 1.9rem 3.5rem;
+
+  &__list {
+    @include container;
+  }
+
+  &__item {
+    @include span(1 of 7);
+    vertical-align: top;
+    margin-bottom: 3.2rem;
+
+    &:nth-child(7n) {
+      @include last;
+    }
+
+    @media only screen and (min-width: $xlarge-device-width) {
+      &,
+      &:nth-child(7n) {
+        @include span(1 of 8);
+      }
+
+      &:nth-child(8n) {
+        @include last;
+      }
+    }
+  }
+}

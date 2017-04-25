@@ -1,0 +1,19 @@
+@import '~variables';
+
+.ab-title-bar {
+  &__h,
+  &__s {
+    margin: 0;
+    color: $brand-cyan-color;
+    font: normal bold 2.2rem $secondary-font-family;
+  }
+
+  &__s {
+    color: $brand-gray-color;
+    margin-left: 1rem;
+  }
+
+  &__toolbar {
+    justify-content: flex-start;
+  }
+}

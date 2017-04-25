@@ -1,0 +1,45 @@
+.ab-employees-bar {
+  &__switcher {
+    font-size: 1.8rem;
+  }
+
+  &__item {
+    margin-right: 2.5rem;
+  }
+
+  &__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    background: white center/cover no-repeat;
+
+    &_timelines {
+      background-image: url('/assets/scalable/timelines-view.svg');
+
+      &:active,
+      &:focus,
+      &_active {
+        background-image: url('/assets/scalable/timelines-view-dark.svg');
+      }
+    }
+
+    &_table {
+      background-image: url('/assets/scalable/table-view.svg');
+
+      &:active,
+      &:focus,
+      &_active {
+        background-image: url('/assets/scalable/table-view-dark.svg');
+      }
+    }
+
+    &_tree {
+      background-image: url('/assets/scalable/tree-view.svg');
+
+      &:active,
+      &:focus,
+      &_active {
+        background-image: url('/assets/scalable/tree-view-dark.svg');
+      }
+    }
+  }
+}
