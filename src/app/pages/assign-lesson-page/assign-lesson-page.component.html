@@ -1,12 +1,12 @@
-<div class="panel panel-default step">
-  <h2>1. Choose who to train with</h2>
+<div class="panel panel-default step shown">
+  <h2>1. Choose who to train with:</h2>
   <div class="cn-employee">
     <ab-photo src="{{ assignee.imgUrl }}"></ab-photo>
     <h3> <a class="ab-link" [routerLink]="['/profile', assignee.id ]">{{ assignee.name + " " + assignee.surname }}</a></h3>
   </div>
 </div>
-<div class="panel panel-default step">
-  <h2>2. Choose language</h2>
+<div class="panel panel-default step shown">
+  <h2>2. Choose language:</h2>
   <div class="dropdown">
     <select class="form-control" (change)="onLanguageSelect($event)">
       <option value="0" disabled selected hidden>Language</option>
@@ -16,6 +16,38 @@
     </select>
   </div>
 </div>
-<div class="panel panel-default step" [class.shown] = "languageSelected">
-
+<div class="panel panel-default step animated" [class.shown] = "languageSelected" [class.bounceInUp] = "languageSelected">
+  <h2>3. Choose topic from recommended:</h2>
+  <button type="button" class="btn btn-warning" aria-label="Left Align" (click)="goBack()">
+    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+    <span>Back</span>
+  </button>
+  <div class="topic-container">
+    <topic *ngFor="let topic of subjectTopics || genreTopics || rootTopics; let i = index; trackBy: trackByFn"
+           [topic]="topic"
+           (onSelect)="onTopicSelect($event)"></topic>
+  </div>
+  <h2>Or enter your own:</h2>
+  <form>
+    <div class="dropdown">
+      <select class="form-control" (change)="onCustomTopicSelect($event)">
+        <option value="0" disabled selected hidden>Select lesson type</option>
+        <option *ngFor="let rootTopics of rootTopics; let i = index; trackBy: trackByFn">
+          {{rootTopics.name}}
+        </option>
+      </select>
+    </div>
+    <div class="dropdown">
+      <select class="form-control" (change)="onCustomTopicSelect($event)">
+        <option value="0" disabled selected hidden>Select subject genre(or leave blank)</option>
+        <option *ngFor="let subjectTopics of subjectTopics; let i = index; trackBy: trackByFn">
+          {{rootTopics.name}}
+        </option>
+      </select>
+    </div>
+    <label for="subject-name">Enter subject name:</label>
+    <div class="input-group">
+      <input type="text" class="form-control" id="subject-name" aria-describedby="basic-addon3">
+    </div>
+  </form>
 </div>

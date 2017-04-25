@@ -26,6 +26,7 @@ import { PeriodComponent } from './period';
 import { LanguageComponent } from './language';
 import { RatingComponent } from './rating';
 import { FriendComponent } from './friend';
+import { TopicComponent } from './topic';
 
 const components = [
   CheckboxComponent,
@@ -49,7 +50,8 @@ const components = [
   PeriodComponent,
   LanguageComponent,
   RatingComponent,
-  FriendComponent
+  FriendComponent,
+  TopicComponent
 ];
 
 @NgModule({

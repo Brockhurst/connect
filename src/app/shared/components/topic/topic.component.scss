@@ -1,0 +1,23 @@
+@import '~variables';
+
+.topic {
+  padding: 20px 10px;
+  min-width: 350px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    background-color: darken(white, 10%);
+  }
+
+  .topic-photo {
+    ab-photo {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
