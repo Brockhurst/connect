@@ -22,6 +22,9 @@ export class AssignLessonPageComponent {
   public languageSelected: boolean;
   public topicSelected;
 
+  public selectedCustomGenre = 0;
+  public selectedCustomRoot = 0;
+
   constructor(private userService: User, private route: ActivatedRoute) {
     const id =  this.route.snapshot.params['id'];
 
@@ -40,11 +43,11 @@ export class AssignLessonPageComponent {
     this.languageSelected = true;
   }
 
-  onCustomTopicSelect(e) {
-    console.log(e);
-  }
-
   onTopicSelect(id) {
+    if (!id) {
+      id = this.selectedCustomGenre || this.selectedCustomRoot;
+    }
+
     if (!this.genreTopics) {
       this.topicSelected.root = id;
       //TODO: GO TO THE SERVER FOR GENRE
@@ -71,13 +74,13 @@ export class AssignLessonPageComponent {
   goBack() {
     if (this.subjectTopics) {
       this.subjectTopics = null;
-      this.subjectTopics.genre = null;
+      this.topicSelected.genre = null;
 
       return;
     }
 
     if (this.genreTopics) {
-      this.subjectTopics.root = null;
+      this.topicSelected.root = null;
       this.genreTopics = null;
     }
   }

@@ -1,4 +1,4 @@
-<div class="topic" (click)="selectTopic()">
+<div class="topic" (click)="selectTopic()" [class.selected] = "selected">
   <div class="topic-photo">
     <ab-photo *ngIf="topic.imgUrl" src="{{topic.imgUrl}}"></ab-photo>
   </div>

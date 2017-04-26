@@ -6,6 +6,7 @@ import { PerfectScrollbarModule } from 'angular2-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'angular2-perfect-scrollbar';
 
 import { ComponentsModule } from 'app/shared/components';
+import { FormsModule } from '@angular/forms';
 
 import { AssignLessonPageRoutingModule } from './assign-lesson-page-routing.module';
 
@@ -17,6 +18,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   imports: [
     PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG),
     CommonModule,
+    FormsModule,
     AssignLessonPageRoutingModule,
     ComponentsModule
   ],

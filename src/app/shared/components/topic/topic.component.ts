@@ -9,6 +9,7 @@ import './topic.component.scss';
 })
 export class TopicComponent {
   @Input() public topic: ITopic;
+  @Input() public selected: boolean;
   @Output() public onSelect = new EventEmitter<number>();
 
   public selectTopic() {

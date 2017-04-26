@@ -9,6 +9,10 @@
   cursor: pointer;
   text-align: center;
 
+  &.selected {
+    background-color: green;
+  }
+
   &:hover {
     background-color: darken(white, 10%);
   }
