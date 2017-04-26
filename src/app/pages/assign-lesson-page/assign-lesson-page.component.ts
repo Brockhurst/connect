@@ -14,10 +14,13 @@ import './assign-lesson-page.component.scss';
 export class AssignLessonPageComponent {
   public assignee: IUserShort;
   public lessons: String[];
+
   public rootTopics;
   public genreTopics;
   public subjectTopics;
+
   public languageSelected: boolean;
+  public topicSelected;
 
   constructor(private userService: User, private route: ActivatedRoute) {
     const id =  this.route.snapshot.params['id'];
@@ -30,6 +33,7 @@ export class AssignLessonPageComponent {
       { "id": 3, "recommended": false, "relevant": false, "url": null, name: "Watch a movie" },
       { "id": 4, "recommended": false, "relevant": false, "url": null, name: "Watch a movie" }
     ];
+    this.topicSelected = {};
   }
 
   onLanguageSelect() {
@@ -42,6 +46,7 @@ export class AssignLessonPageComponent {
 
   onTopicSelect(id) {
     if (!this.genreTopics) {
+      this.topicSelected.root = id;
       //TODO: GO TO THE SERVER FOR GENRE
       this.genreTopics = [
         { "id": 5, "name": "Horror", "recommended": false, "relevant": false, "url": null }
@@ -50,20 +55,29 @@ export class AssignLessonPageComponent {
       return;
     }
 
-    //TODO: GO TO THE SERVER FOR SUBJECT
-    this.subjectTopics = [
-      { "id": 6, "name": "Silent Hill", "recommended": true, "relevant": false, "imgUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/Silent_Hill_film_poster.jpg/220px-Silent_Hill_film_poster.jpg" }
-    ]
+    if (!this.subjectTopics) {
+      this.topicSelected.genre = id;
+      //TODO: GO TO THE SERVER FOR SUBJECT
+      this.subjectTopics = [
+        { "id": 6, "name": "Silent Hill", "recommended": true, "relevant": false, "imgUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/Silent_Hill_film_poster.jpg/220px-Silent_Hill_film_poster.jpg" }
+      ];
+
+      return;
+    }
+
+    this.topicSelected.id = id;
   }
 
   goBack() {
     if (this.subjectTopics) {
       this.subjectTopics = null;
+      this.subjectTopics.genre = null;
 
       return;
     }
 
     if (this.genreTopics) {
+      this.subjectTopics.root = null;
       this.genreTopics = null;
     }
   }

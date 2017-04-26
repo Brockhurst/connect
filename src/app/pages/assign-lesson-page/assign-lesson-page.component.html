@@ -29,25 +29,33 @@
   </div>
   <h2>Or enter your own:</h2>
   <form>
+
     <div class="dropdown">
       <select class="form-control" (change)="onCustomTopicSelect($event)">
         <option value="0" disabled selected hidden>Select lesson type</option>
-        <option *ngFor="let rootTopics of rootTopics; let i = index; trackBy: trackByFn">
-          {{rootTopics.name}}
+        <option *ngFor="let rootTopic of rootTopics; let i = index; trackBy: trackByFn"
+                [selected]="topicSelected.root === rootTopic.id">
+          {{rootTopic.name}}
         </option>
       </select>
     </div>
-    <div class="dropdown">
+
+    <div *ngIf="genreTopics" class="dropdown">
       <select class="form-control" (change)="onCustomTopicSelect($event)">
         <option value="0" disabled selected hidden>Select subject genre(or leave blank)</option>
-        <option *ngFor="let subjectTopics of subjectTopics; let i = index; trackBy: trackByFn">
-          {{rootTopics.name}}
+        <option *ngFor="let genreTopic of genreTopics; let i = index; trackBy: trackByFn"
+          [selected]="topicSelected.genre === genreTopic.id">
+          {{genreTopic.name}}
         </option>
       </select>
     </div>
-    <label for="subject-name">Enter subject name:</label>
-    <div class="input-group">
-      <input type="text" class="form-control" id="subject-name" aria-describedby="basic-addon3">
+
+    <div *ngIf="subjectTopics">
+      <label for="subject-name">Enter subject name:</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="subject-name" aria-describedby="basic-addon3">
+      </div>
     </div>
+
   </form>
 </div>
