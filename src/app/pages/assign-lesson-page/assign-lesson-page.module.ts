@@ -4,6 +4,7 @@ import { AssignLessonPageComponent } from './assign-lesson-page.component';
 
 import { PerfectScrollbarModule } from 'angular2-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'angular2-perfect-scrollbar';
+import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
 
 import { ComponentsModule } from 'app/shared/components';
 import { FormsModule } from '@angular/forms';
@@ -17,6 +18,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 @NgModule({
   imports: [
     PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG),
+    NguiDatetimePickerModule,
     CommonModule,
     FormsModule,
     AssignLessonPageRoutingModule,

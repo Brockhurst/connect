@@ -75,6 +75,7 @@ export class AssignLessonPageComponent {
     if (this.subjectTopics) {
       this.subjectTopics = null;
       this.topicSelected.genre = null;
+      this.topicSelected.id = null;
 
       return;
     }

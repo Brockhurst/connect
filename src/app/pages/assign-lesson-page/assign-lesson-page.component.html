@@ -5,6 +5,7 @@
     <h3> <a class="ab-link" [routerLink]="['/profile', assignee.id ]">{{ assignee.name + " " + assignee.surname }}</a></h3>
   </div>
 </div>
+
 <div class="panel panel-default step shown">
   <h2>2. Choose language:</h2>
   <div class="dropdown">
@@ -16,6 +17,7 @@
     </select>
   </div>
 </div>
+
 <div class="panel panel-default step animated" [class.shown] = "languageSelected" [class.bounceInUp] = "languageSelected">
   <h2>3. Choose topic from recommended:</h2>
   <button type="button" class="btn btn-warning" aria-label="Left Align" (click)="goBack()">
@@ -54,9 +56,27 @@
     <div *ngIf="subjectTopics">
       <label for="subject-name">Enter subject name:</label>
       <div class="input-group">
-        <input type="text" class="form-control" id="subject-name" aria-describedby="basic-addon3">
+        <input type="text" class="form-control" id="subject-name" aria-describedby="basic-addon3"
+               [(ngModel)]="topicSelected.customName" name="custom-name">
       </div>
     </div>
 
   </form>
+</div>
+
+<div class="panel panel-default step shown" *ngIf="topicSelected.id || topicSelected.customName">
+  <h2>4. Choose date and time of your lesson:</h2>
+
+  <label for="fromDate">Lesson starts:</label>
+  <input
+    id="fromDate"
+    [(ngModel)]="startDateTime"
+    ngui-datetime-picker/>
+
+  <label for="duration">Duration(in minutes):</label>
+  <br>
+  <input
+    name="duration"
+    id="duration"
+    [(ngModel)]="duration">
 </div>
