@@ -3,6 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 
 import { IUserShort } from 'app/shared/interfaces/user.interface';
 import { User } from 'app/shared/services/resources/user';
+import { Lesson } from 'app/shared/services/resources/lesson';
+import { Router } from '@angular/router';
+
+import { Modal } from 'angular2-modal/plugins/bootstrap';
 
 import './assign-lesson-page.component.scss';
 
@@ -21,11 +25,17 @@ export class AssignLessonPageComponent {
 
   public languageSelected: boolean;
   public topicSelected;
+  public startDateTime;
+  public duration;
 
   public selectedCustomGenre = 0;
   public selectedCustomRoot = 0;
 
-  constructor(private userService: User, private route: ActivatedRoute) {
+  constructor(private userService: User,
+              private lessonService: Lesson,
+              private route: ActivatedRoute,
+              private modal: Modal,
+              private router: Router) {
     const id =  this.route.snapshot.params['id'];
 
     this.assignee = userService.get({id});
@@ -68,7 +78,11 @@ export class AssignLessonPageComponent {
       return;
     }
 
-    this.topicSelected.id = id;
+    if (this.topicSelected.id === id) {
+      this.topicSelected.id = null;
+    } else {
+      this.topicSelected.id = id;
+    }
   }
 
   goBack() {
@@ -83,6 +97,36 @@ export class AssignLessonPageComponent {
     if (this.genreTopics) {
       this.topicSelected.root = null;
       this.genreTopics = null;
+    }
+  }
+
+  submitLesson(timingForm) {
+    const isTopicSelected = !!(this.topicSelected.id || this.topicSelected.name);
+
+    if (isTopicSelected && timingForm.valid) {
+      this.lessonService.save({
+        languageId: 2,
+        startDateTime: this.startDateTime,
+        duration: this.duration,
+        userApprenticeId: this.assignee.id,
+        userMasterId: 2
+      }).$observable
+        .subscribe(() => {
+          let dialog = this.modal.confirm()
+            .size('sm')
+            .isBlocking(true)
+            .keyboard(27)
+            .title('Success')
+            .body('Lesson submitted successfully! You can now view it in your lessons tab.')
+            .open();
+
+          dialog.then((resultPromise) => {
+            return resultPromise.result.then(() => {
+              this.router.navigate(['/lessons'])
+            });
+          });
+
+        });
     }
   }
 }

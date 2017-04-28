@@ -67,16 +67,24 @@
 <div class="panel panel-default step shown" *ngIf="topicSelected.id || topicSelected.customName">
   <h2>4. Choose date and time of your lesson:</h2>
 
-  <label for="fromDate">Lesson starts:</label>
-  <input
-    id="fromDate"
-    [(ngModel)]="startDateTime"
-    ngui-datetime-picker/>
+  <form id="ngForm" (ngSubmit)="submitLesson(timingForm)" #timingForm="ngForm">
+    <label for="fromDate">Lesson starts:</label>
+    <input
+      name="startDateTime"
+      id="fromDate"
+      [(ngModel)]="startDateTime"
+      ngui-datetime-picker/>
 
-  <label for="duration">Duration(in minutes):</label>
-  <br>
-  <input
-    name="duration"
-    id="duration"
-    [(ngModel)]="duration">
+    <label for="duration">Duration(in minutes):</label>
+    <br>
+    <input
+      name="duration"
+      id="duration"
+      [(ngModel)]="duration">
+  </form>
+
 </div>
+
+<button *ngIf="startDateTime && duration && (topicSelected.id || topicSelected.customName)"
+        form="ngForm"
+        class="btn btn-info submitButton">Submit lesson request</button>

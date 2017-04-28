@@ -35,83 +35,228 @@
       ]
     }
   ],
-  "assignments": [
+  "lessons": [
     {
-      "id": 1,
-      "activity": {
-        "id": 2,
-        "name": "Case Study",
-        "type": "CC"
-      },
-      "employee": {
-        "id": 3,
-        "role": "Coordinator",
-        "name": "Joe Doe",
-        "imgUrl": "/assets/img/sample-photo-4.jpg"
-      },
-      "startDate": "2017-01-05",
-      "endDate": "2017-04-12",
-      "status": "new",
-      "weight": 2
-    }
-  ],
-  "activities": [
+      "languageId": 2,
+      "startDateTime": "2017-04-14T14:28:00.000Z",
+      "duration": "fd",
+      "userApprenticeId": 1,
+      "userMasterId": 2,
+      "id": 1
+    },
     {
-      "id": 2,
-      "name": "Case Study",
-      "description": "Case Study",
-      "weight": 3,
-      "startDate": "2017-01-05",
-      "endDate": "2017-01-12"
+      "languageId": 2,
+      "startDateTime": "2017-04-06T14:37:00.000Z",
+      "duration": "43",
+      "userApprenticeId": 1,
+      "userMasterId": 2,
+      "id": 2
+    },
+    {
+      "languageId": 2,
+      "startDateTime": "2017-04-13T14:38:00.000Z",
+      "duration": "3",
+      "userApprenticeId": 1,
+      "userMasterId": 2,
+      "id": 3
+    },
+    {
+      "languageId": 2,
+      "startDateTime": "2017-04-07T14:39:00.000Z",
+      "duration": "54",
+      "userApprenticeId": 1,
+      "userMasterId": 2,
+      "id": 4
+    },
+    {
+      "languageId": 2,
+      "startDateTime": "2017-04-07T14:39:00.000Z",
+      "duration": "54",
+      "userApprenticeId": 1,
+      "userMasterId": 2,
+      "id": 5
     }
   ],
   "employees": [
-    { "id": 1, "name": "John Doe", "imgUrl": "/assets/img/sample-photo-2.jpg" },
-    { "id": 1, "name": "Svitlana Lubarskaya", "imgUrl": "/assets/img/sample-photo-4.jpg" },
-    { "id": 1, "name": "Kolin Fert", "imgUrl": "/assets/img/sample-photo-3.jpg" },
-
-    { "id": 1, "name": "John Doe", "imgUrl": "/assets/img/sample-photo-2.jpg" },
-    { "id": 1, "name": "Svitlana Lubarskaya", "imgUrl": "/assets/img/sample-photo-4.jpg" },
-    { "id": 1, "name": "Kolin Fert", "imgUrl": "/assets/img/sample-photo-3.jpg" },
-
-    { "id": 1, "name": "John Doe", "imgUrl": "/assets/img/sample-photo-2.jpg" },
-    { "id": 1, "name": "Svitlana Lubarskaya", "imgUrl": "/assets/img/sample-photo-4.jpg" },
-    { "id": 1, "name": "Kolin Fert", "imgUrl": "/assets/img/sample-photo-3.jpg" },
-
-    { "id": 1, "name": "John Doe", "imgUrl": "/assets/img/sample-photo-2.jpg" },
-    { "id": 1, "name": "Svitlana Lubarskaya", "imgUrl": "/assets/img/sample-photo-4.jpg" },
-    { "id": 1, "name": "Kolin Fert", "imgUrl": "/assets/img/sample-photo-3.jpg" },
-
-    { "id": 1, "name": "John Doe", "imgUrl": "/assets/img/sample-photo-2.jpg" },
-    { "id": 1, "name": "Svitlana Lubarskaya", "imgUrl": "/assets/img/sample-photo-4.jpg" },
-    { "id": 1, "name": "Kolin Fert", "imgUrl": "/assets/img/sample-photo-3.jpg" },
-
-    { "id": 1, "name": "John Doe", "imgUrl": "/assets/img/sample-photo-2.jpg" },
-    { "id": 1, "name": "Svitlana Lubarskaya", "imgUrl": "/assets/img/sample-photo-4.jpg" },
-    { "id": 1, "name": "Kolin Fert", "imgUrl": "/assets/img/sample-photo-3.jpg" },
-
-    { "id": 1, "name": "John Doe", "imgUrl": "/assets/img/sample-photo-2.jpg" },
-    { "id": 1, "name": "Svitlana Lubarskaya", "imgUrl": "/assets/img/sample-photo-4.jpg" },
-    { "id": 1, "name": "Kolin Fert", "imgUrl": "/assets/img/sample-photo-3.jpg" },
-
-    { "id": 1, "name": "John Doe", "imgUrl": "/assets/img/sample-photo-2.jpg" },
-    { "id": 1, "name": "Svitlana Lubarskaya", "imgUrl": "/assets/img/sample-photo-4.jpg" },
-    { "id": 1, "name": "Kolin Fert", "imgUrl": "/assets/img/sample-photo-3.jpg" },
-
-    { "id": 1, "name": "John Doe", "imgUrl": "/assets/img/sample-photo-2.jpg" },
-    { "id": 1, "name": "Svitlana Lubarskaya", "imgUrl": "/assets/img/sample-photo-4.jpg" },
-    { "id": 1, "name": "Kolin Fert", "imgUrl": "/assets/img/sample-photo-3.jpg" },
-
-    { "id": 1, "name": "John Doe", "imgUrl": "/assets/img/sample-photo-2.jpg" },
-    { "id": 1, "name": "Svitlana Lubarskaya", "imgUrl": "/assets/img/sample-photo-4.jpg" },
-    { "id": 1, "name": "Kolin Fert", "imgUrl": "/assets/img/sample-photo-3.jpg" },
-
-    { "id": 1, "name": "John Doe", "imgUrl": "/assets/img/sample-photo-2.jpg" },
-    { "id": 1, "name": "Svitlana Lubarskaya", "imgUrl": "/assets/img/sample-photo-4.jpg" },
-    { "id": 1, "name": "Kolin Fert", "imgUrl": "/assets/img/sample-photo-3.jpg" },
-
-    { "id": 1, "name": "John Doe", "imgUrl": "/assets/img/sample-photo-2.jpg" },
-    { "id": 1, "name": "Svitlana Lubarskaya", "imgUrl": "/assets/img/sample-photo-4.jpg" },
-    { "id": 1, "name": "Kolin Fert", "imgUrl": "/assets/img/sample-photo-3.jpg" }
+    {
+      "id": 1,
+      "name": "John Doe",
+      "imgUrl": "/assets/img/sample-photo-2.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Svitlana Lubarskaya",
+      "imgUrl": "/assets/img/sample-photo-4.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Kolin Fert",
+      "imgUrl": "/assets/img/sample-photo-3.jpg"
+    },
+    {
+      "id": 1,
+      "name": "John Doe",
+      "imgUrl": "/assets/img/sample-photo-2.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Svitlana Lubarskaya",
+      "imgUrl": "/assets/img/sample-photo-4.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Kolin Fert",
+      "imgUrl": "/assets/img/sample-photo-3.jpg"
+    },
+    {
+      "id": 1,
+      "name": "John Doe",
+      "imgUrl": "/assets/img/sample-photo-2.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Svitlana Lubarskaya",
+      "imgUrl": "/assets/img/sample-photo-4.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Kolin Fert",
+      "imgUrl": "/assets/img/sample-photo-3.jpg"
+    },
+    {
+      "id": 1,
+      "name": "John Doe",
+      "imgUrl": "/assets/img/sample-photo-2.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Svitlana Lubarskaya",
+      "imgUrl": "/assets/img/sample-photo-4.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Kolin Fert",
+      "imgUrl": "/assets/img/sample-photo-3.jpg"
+    },
+    {
+      "id": 1,
+      "name": "John Doe",
+      "imgUrl": "/assets/img/sample-photo-2.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Svitlana Lubarskaya",
+      "imgUrl": "/assets/img/sample-photo-4.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Kolin Fert",
+      "imgUrl": "/assets/img/sample-photo-3.jpg"
+    },
+    {
+      "id": 1,
+      "name": "John Doe",
+      "imgUrl": "/assets/img/sample-photo-2.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Svitlana Lubarskaya",
+      "imgUrl": "/assets/img/sample-photo-4.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Kolin Fert",
+      "imgUrl": "/assets/img/sample-photo-3.jpg"
+    },
+    {
+      "id": 1,
+      "name": "John Doe",
+      "imgUrl": "/assets/img/sample-photo-2.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Svitlana Lubarskaya",
+      "imgUrl": "/assets/img/sample-photo-4.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Kolin Fert",
+      "imgUrl": "/assets/img/sample-photo-3.jpg"
+    },
+    {
+      "id": 1,
+      "name": "John Doe",
+      "imgUrl": "/assets/img/sample-photo-2.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Svitlana Lubarskaya",
+      "imgUrl": "/assets/img/sample-photo-4.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Kolin Fert",
+      "imgUrl": "/assets/img/sample-photo-3.jpg"
+    },
+    {
+      "id": 1,
+      "name": "John Doe",
+      "imgUrl": "/assets/img/sample-photo-2.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Svitlana Lubarskaya",
+      "imgUrl": "/assets/img/sample-photo-4.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Kolin Fert",
+      "imgUrl": "/assets/img/sample-photo-3.jpg"
+    },
+    {
+      "id": 1,
+      "name": "John Doe",
+      "imgUrl": "/assets/img/sample-photo-2.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Svitlana Lubarskaya",
+      "imgUrl": "/assets/img/sample-photo-4.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Kolin Fert",
+      "imgUrl": "/assets/img/sample-photo-3.jpg"
+    },
+    {
+      "id": 1,
+      "name": "John Doe",
+      "imgUrl": "/assets/img/sample-photo-2.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Svitlana Lubarskaya",
+      "imgUrl": "/assets/img/sample-photo-4.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Kolin Fert",
+      "imgUrl": "/assets/img/sample-photo-3.jpg"
+    },
+    {
+      "id": 1,
+      "name": "John Doe",
+      "imgUrl": "/assets/img/sample-photo-2.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Svitlana Lubarskaya",
+      "imgUrl": "/assets/img/sample-photo-4.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Kolin Fert",
+      "imgUrl": "/assets/img/sample-photo-3.jpg"
+    }
   ]
 }

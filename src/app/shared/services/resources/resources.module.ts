@@ -6,12 +6,14 @@ import { Assignment } from './assignment';
 import { Activity }   from './activity';
 import { Employee }   from './employee';
 import { User }       from './user';
+import { Lesson }       from './lesson';
 
 const resources = [
   Assignment,
   Activity,
   Employee,
-  User
+  User,
+  Lesson
 ];
 
 @NgModule({
