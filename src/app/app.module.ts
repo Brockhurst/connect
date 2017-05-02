@@ -13,6 +13,7 @@ import {
 
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
+import { CarouselModule } from 'ngx-bootstrap';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -30,6 +31,9 @@ import { MainPageModule } from './pages/main-page';
 import { ProfilePageModule } from './pages/profile-page';
 import { FriendsPageModule } from './pages/friends-page';
 import { AssignLessonPageModule } from './pages/assign-lesson-page';
+import { LessonsPageModule } from './pages/lessons-page';
+import { LessonPageModule } from './pages/lesson-page';
+import { PartnersPageModule } from './pages/partners-page';
 import { ComponentsModule } from './shared/components';
 import { ServicesModule } from './shared/services';
 
@@ -60,12 +64,16 @@ type StoreType = {
     ProfilePageModule,
     FriendsPageModule,
     AssignLessonPageModule,
+    LessonsPageModule,
+    PartnersPageModule,
+    LessonPageModule,
     NotFoundPageModule,
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
     ModalModule.forRoot(),
+    CarouselModule.forRoot(),
     BootstrapModalModule
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection

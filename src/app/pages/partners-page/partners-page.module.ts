@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LessonsPageComponent } from './lessons-page.component';
+import { PartnersPageComponent } from './partners-page.component';
+
+import { CarouselModule } from 'ngx-bootstrap';
 
 import { PerfectScrollbarModule } from 'angular2-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'angular2-perfect-scrollbar';
-import { CalendarComponent } from "ap-angular2-fullcalendar/src/calendar/calendar";
 
 import { ComponentsModule } from 'app/shared/components';
 
-import { LessonsPageRoutingModule } from './lessons-page-routing.module';
+import { PartnersPageRoutingModule } from './partners-page-routing.module';
+
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -18,13 +20,13 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   imports: [
     PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG),
     CommonModule,
-    LessonsPageRoutingModule,
-    ComponentsModule
+    PartnersPageRoutingModule,
+    ComponentsModule,
+    CarouselModule
   ],
   declarations: [
-    LessonsPageComponent,
-    CalendarComponent
+    PartnersPageComponent
   ]
 })
-export class LessonsPageModule {
+export class PartnersPageModule {
 }

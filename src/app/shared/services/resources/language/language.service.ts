@@ -8,9 +8,9 @@ interface IQueryInput {}
 
 @Injectable()
 @ResourceParams({
-  url: `${ApiSettings.API_ENDPOINT}/employees`
+  url: `${ApiSettings.API_ENDPOINT}/languages`
 })
-export class Employee extends ResourceCRUD<IQueryInput, IEmployee, IEmployee> {
+export class Language extends ResourceCRUD<IQueryInput, IEmployee, IEmployee> {
   constructor(http: Http, injector: Injector) {
     super(http, injector);
   }

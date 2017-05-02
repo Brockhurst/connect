@@ -1,23 +1,5 @@
 @import '~variables';
 
-.cn-profile-page {
-  .ab-photo-prototype {
-    width: 15rem;
-    height: 15rem;
-  }
-
-  &__about {
-    margin-top: 15px;
-  }
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    li {
-      margin: 0;
-      padding: 0;
-    }
-  }
+.fc-day-grid-container {
+  height: auto!important;
 }

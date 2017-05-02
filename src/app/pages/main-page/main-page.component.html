@@ -1,33 +1,33 @@
-<aside class="ab-main-page__left ab-main-page__part">
-  <header class="ab-main-page__tools">
-    <div class="ab-container ab-toolbar">
-      <ab-filter></ab-filter>
+<carousel>
+  <slide>
+    <img src="https://artaulysiahaan.files.wordpress.com/2013/06/langaugegee1.jpg" alt="First slide">
+    <div class="carousel-caption">
+      <h3>CONNECT!</h3>
+      <p>Revolutionary learning system</p>
     </div>
-    <div class="ab-main-page__line"></div>
-    <div class="ab-container">
-      <ab-assignments-bar></ab-assignments-bar>
+  </slide>
+  <slide>
+    <img src="https://www.w3schools.com/css/trolltunga.jpg" alt="Second slide">
+  </slide>
+  <slide>
+    <img src="https://www.w3schools.com/css/trolltunga.jpg" alt="Third slide">
+  </slide>
+</carousel>
+<div class="row statistics">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading pan-header">Trending topics this week</div>
+      <div class="panel-body">
+        Panel content
+      </div>
     </div>
-  </header>
-  <perfect-scrollbar class="ab-main-page__content ab-container ab-main-page__container">
-    <router-outlet name="assignments"></router-outlet>
-  </perfect-scrollbar>
-</aside>
-<aside class="ab-main-page__right ab-main-page__part">
-  <header class="ab-main-page__tools">
-    <div class="ab-container">
-      <ab-title-bar
-        heading="DSED SOLUTIONS"
-        subheading="76 employees">
-      </ab-title-bar>
-    </div>
-    <div class="ab-main-page__line ab-main-page__line_plain"></div>
-    <div class="ab-container">
-      <ab-employees-bar></ab-employees-bar>
-    </div>
-  </header>
-  <div class="ab-container ab-main-page__container ab-main-page__frame-container">
-    <perfect-scrollbar class="ab-main-page__content ab-main-page__frame">
-      <router-outlet name="employees"></router-outlet>
-    </perfect-scrollbar>
   </div>
-</aside>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading pan-header">Most difficult languages</div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+  </div>
+</div>

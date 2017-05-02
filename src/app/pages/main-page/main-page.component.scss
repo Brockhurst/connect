@@ -1,53 +1,21 @@
 @import '~variables';
 
-.ab-main-page {
-  height: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  background: $brand-blue-color;
+.carousel-item {
+  height: 500px;
 
-  &__part {
-    flex-basis: 50%;
-    box-sizing: border-box;
-    display: flex;
-    flex-flow: column nowrap;
+  .item {
+    text-align: center;
   }
+}
 
-  &__left {
-    box-shadow: 0 .2rem .6rem .2rem rgba(0, 0, 0, 0.2);
-    z-index: 100;
-  }
+.statistics {
+  margin-top: 20px;
 
-  &__content {
-    flex: 1 1 0;
-    overflow: auto;
-  }
-
-  &__frame {
-    background: white;
-  }
-
-  &__container {
-    padding-top: 2rem;
-  }
-
-  &__frame-container {
-    flex: 1 1 0;
-    padding-bottom: 2rem;
-    display: flex;
-    box-sizing: border-box;
-  }
-
-  &__tools {
-    flex: none;
-    background: white;
-  }
-
-  &__line {
-    border-bottom: solid 1px $light-gray-color;
-
-    &_plain {
-      border-color: white;
-    }
+  .pan-header {
+    font-size: 2em;
+    background-color: $brand-gray-color;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
   }
 }

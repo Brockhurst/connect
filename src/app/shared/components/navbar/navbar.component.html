@@ -1,7 +1,7 @@
 <div class="ab-container ab-navbar__container">
   <div class="ab-navbar__left">
     <div class="ab-navbar__brand">
-      <a class="ab-link" [routerLink]="['/profile', 'me']">
+      <a class="ab-link" [routerLink]="['/']">
         CONNECT
       </a>
     </div>
@@ -15,13 +15,20 @@
         Lessons
       </a>
     </div>
+    <div class="ab-navbar__brand">
+      <a class="ab-link" [routerLink]="['/partners']">
+        Partners
+      </a>
+    </div>
   </div>
   <div class="ab-navbar__right">
     <div class="ab-navbar__search">
       <ab-search></ab-search>
     </div>
     <div class="ab-navbar__photo">
-      <ab-photo src="assets/img/sample-photo-1.jpg"></ab-photo>
+      <a [routerLink]="['/profile', 'me']">
+        <ab-photo src="assets/img/sample-photo-1.jpg"></ab-photo>
+      </a>
     </div>
     <a class="ab-link ab-navbar__menu" href="#">
       <img class="ab-navbar__arrow" src="/assets/scalable/down-arrow.svg" alt="">

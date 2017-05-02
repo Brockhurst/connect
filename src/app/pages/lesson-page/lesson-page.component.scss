@@ -1,0 +1,10 @@
+.ab-not-found-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  &__code {
+    font-size: 5rem;
+  }
+}

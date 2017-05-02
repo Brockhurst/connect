@@ -1,36 +1,6 @@
-<div class="row">
-  <div class="col-sm-3">
-    <ab-photo
-      *ngIf="user.name"
-      src="{{user.imgUrl || '/assets/img/sample-photo-4.jpg'}}">
-    </ab-photo>
-  </div>
-  <div class="col-sm-9">
-    <div class="row">
-      <h1>
-        {{user.name + ' ' + user.surname}}
-      </h1>
-      <div>Male</div>
-    </div>
-  </div>
-</div>
-<div class="row" *ngIf="!isSelf">
-  <button type="button" class="btn btn-success disabled">Connected</button>
-  <button type="button" class="btn btn-warning enabled">Propose lesson</button>
-</div>
-<div class="row">
-  <ul class="col-sm-6 list-group">
-    <li class="list-group-item" *ngFor="let language of user.languages; let i = index; trackBy: trackByFn"><cn-lang [language]="language"></cn-lang></li>
-  </ul>
-  <div class="col-sm-6">
-    <cn-rating></cn-rating>
-  </div>
-</div>
-<div class="row cn-profile-page__about">
-  <div class="panel panel-default">
-    <div class="panel-heading">About me</div>
-    <div class="panel-body">...</div>
-  </div>
-</div>
-
-
+<angular2-fullcalendar [options]="{
+        height: 'parent',
+        fixedWeekCount : false,
+        eventLimit: true,
+        events: events
+      }"></angular2-fullcalendar>
