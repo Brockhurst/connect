@@ -1,11 +1,23 @@
 @import '~variables';
 
+.carousel {
+  margin-top: 10px;
+}
+
 .carousel-item {
   height: 500px;
 
   .item {
     text-align: center;
   }
+}
+
+.carousel-inner {
+  background-color: $brand-gray-color;
+}
+
+.carousel-caption.dark {
+  color: $brand-gray-color;
 }
 
 .statistics {

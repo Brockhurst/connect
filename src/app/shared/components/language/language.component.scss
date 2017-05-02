@@ -1,5 +1,22 @@
 @import '~variables';
 
-.cn-language {
+.flag-icon {
+  font-size: 4em;
+}
 
+.lang-name {
+  display: inline-block;
+}
+
+.level {
+  display: flex;
+  align-content: center;
+
+  h3 {
+    margin-left: 10px;
+  }
+}
+
+.skill {
+  padding: 5px 10px;
 }

@@ -5,7 +5,7 @@ import { LessonPageComponent } from './';
 
 const ROUTES: Routes = [
   {
-    path: 'lesson',
+    path: 'lesson/:id',
     component: LessonPageComponent
   }
 ];

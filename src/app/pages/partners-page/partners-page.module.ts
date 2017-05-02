@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { PartnersPageComponent } from './partners-page.component';
 
@@ -22,7 +23,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     CommonModule,
     PartnersPageRoutingModule,
     ComponentsModule,
-    CarouselModule
+    CarouselModule,
+    FormsModule
   ],
   declarations: [
     PartnersPageComponent

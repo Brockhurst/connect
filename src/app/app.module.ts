@@ -14,6 +14,7 @@ import {
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { CarouselModule } from 'ngx-bootstrap';
+import { RatingModule } from 'ngx-bootstrap';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -74,6 +75,7 @@ type StoreType = {
     AppRoutingModule,
     ModalModule.forRoot(),
     CarouselModule.forRoot(),
+    RatingModule.forRoot(),
     BootstrapModalModule
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection

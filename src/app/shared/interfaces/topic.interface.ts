@@ -4,5 +4,5 @@ export interface ITopic {
   recommended: boolean;
   relevant: boolean;
   url?: string;
-  imgUrl?: string;
+  imageUrl?: string;
 }

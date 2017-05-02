@@ -2,28 +2,28 @@ import { Injectable, Injector } from '@angular/core';
 import { ResourceParams, ResourceCRUD, ResourceAction, ResourceMethod } from 'ng2-resource-rest';
 import { Http } from '@angular/http';
 import { ApiSettings } from 'app/shared/services/api-settings-rud';
-import { IUser, IUserShort } from 'app/shared/interfaces/user.interface';
+import { ITopic } from 'app/shared/interfaces/topic.interface';
 
 interface IQueryInput {}
 
 @Injectable()
 @ResourceParams({
-  url: `${ApiSettings.API_ENDPOINT}/users`
+  url: `${ApiSettings.API_ENDPOINT}/topics`
 })
-export class User extends ResourceCRUD<IQueryInput, IUser, IUser> {
+export class Topic extends ResourceCRUD<IQueryInput, ITopic, ITopic> {
   constructor(http: Http, injector: Injector) {
     super(http, injector);
   }
 
   @ResourceAction({
     isArray: true,
-    path: '/{!id}/friends'
+    path: '/root'
   })
-  getFriends: ResourceMethod<{id: any}, IUserShort[]>
+  getRoot: ResourceMethod<IQueryInput, ITopic[]>
 
   @ResourceAction({
     isArray: true,
-    path: '/{!id}/search'
+    path: '/{!id}/children'
   })
-  search: ResourceMethod<{id: any, level, languageId}, IUserShort[]>
+  getChildren: ResourceMethod<{id: any}, ITopic[]>
 }

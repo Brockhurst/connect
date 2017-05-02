@@ -2,18 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 
-import { Assignment } from './assignment';
-import { Activity }   from './activity';
-import { Employee }   from './employee';
 import { User }       from './user';
-import { Lesson }       from './lesson';
+import { Lesson }     from './lesson';
+import { Language }   from './language';
+import { Topic }   from './topic';
 
 const resources = [
-  Assignment,
-  Activity,
-  Employee,
   User,
-  Lesson
+  Lesson,
+  Language,
+  Topic
 ];
 
 @NgModule({

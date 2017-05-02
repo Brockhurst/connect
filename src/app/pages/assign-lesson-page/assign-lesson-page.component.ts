@@ -4,7 +4,11 @@ import { ActivatedRoute } from '@angular/router';
 import { IUserShort } from 'app/shared/interfaces/user.interface';
 import { User } from 'app/shared/services/resources/user';
 import { Lesson } from 'app/shared/services/resources/lesson';
+import { Topic } from 'app/shared/services/resources/topic';
+import { Language } from 'app/shared/services/resources/language';
 import { Router } from '@angular/router';
+
+import { currentUser } from 'app/shared/services/current-user.service';
 
 import { Modal } from 'angular2-modal/plugins/bootstrap';
 
@@ -16,14 +20,17 @@ import './assign-lesson-page.component.scss';
   templateUrl: 'assign-lesson-page.component.html'
 })
 export class AssignLessonPageComponent {
-  public assignee: IUserShort;
-  public lessons: String[];
+  public assignee;
+  public languages;
+
+  public isTopicLoading = true;
+  public isUserLoading = true;
 
   public rootTopics;
   public genreTopics;
   public subjectTopics;
 
-  public languageSelected: boolean;
+  public selectedLanguage = 0;
   public topicSelected;
   public startDateTime;
   public duration;
@@ -33,24 +40,27 @@ export class AssignLessonPageComponent {
 
   constructor(private userService: User,
               private lessonService: Lesson,
+              private languageService: Language,
+              private topicService: Topic,
               private route: ActivatedRoute,
               private modal: Modal,
               private router: Router) {
     const id =  this.route.snapshot.params['id'];
 
     this.assignee = userService.get({id});
-    this.lessons = ['English', 'Russian'];
-    this.rootTopics = [
-      { "id": 1, "recommended": false, "relevant": false, "url": null, name: "Watch a movie" },
-      { "id": 2, "recommended": false, "relevant": false, "url": null, name: "Watch a movie" },
-      { "id": 3, "recommended": false, "relevant": false, "url": null, name: "Watch a movie" },
-      { "id": 4, "recommended": false, "relevant": false, "url": null, name: "Watch a movie" }
-    ];
-    this.topicSelected = {};
-  }
 
-  onLanguageSelect() {
-    this.languageSelected = true;
+    this.assignee.$observable.subscribe(() => {
+      this.isUserLoading = false;
+    });
+
+    this.languages = languageService.query();
+
+    this.rootTopics = topicService.getRoot({});
+    this.rootTopics.$observable.subscribe(() => {
+      this.isTopicLoading = false;
+    });
+
+    this.topicSelected = {};
   }
 
   onTopicSelect(id) {
@@ -59,21 +69,23 @@ export class AssignLessonPageComponent {
     }
 
     if (!this.genreTopics) {
+      this.isTopicLoading = true;
       this.topicSelected.root = id;
-      //TODO: GO TO THE SERVER FOR GENRE
-      this.genreTopics = [
-        { "id": 5, "name": "Horror", "recommended": false, "relevant": false, "url": null }
-      ];
+      this.genreTopics = this.topicService.getChildren({id});
+      this.genreTopics.$observable.subscribe(() => {
+        this.isTopicLoading = false;
+      });
 
       return;
     }
 
     if (!this.subjectTopics) {
+      this.isTopicLoading = true;
       this.topicSelected.genre = id;
-      //TODO: GO TO THE SERVER FOR SUBJECT
-      this.subjectTopics = [
-        { "id": 6, "name": "Silent Hill", "recommended": true, "relevant": false, "imgUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/Silent_Hill_film_poster.jpg/220px-Silent_Hill_film_poster.jpg" }
-      ];
+      this.subjectTopics = this.topicService.getChildren({id});
+      this.subjectTopics.$observable.subscribe(() => {
+        this.isTopicLoading = false;
+      });
 
       return;
     }
@@ -105,11 +117,11 @@ export class AssignLessonPageComponent {
 
     if (isTopicSelected && timingForm.valid) {
       this.lessonService.save({
-        languageId: 2,
+        languageId: this.selectedLanguage,
         startDateTime: this.startDateTime,
         duration: this.duration,
         userApprenticeId: this.assignee.id,
-        userMasterId: 2
+        userMasterId: currentUser.id
       }).$observable
         .subscribe(() => {
           let dialog = this.modal.confirm()

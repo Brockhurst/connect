@@ -5,4 +5,5 @@ export interface ILesson {
   duration: number;
   userApprenticeId: number;
   userMasterId: number;
+  roomId?: string;
 }

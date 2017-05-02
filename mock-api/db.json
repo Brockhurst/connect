@@ -1,4 +1,10 @@
 {
+  "languages": [
+    {
+      "id": 1,
+      "name": "English"
+    }
+  ],
   "users": [
     {
       "id": 1,
@@ -6,14 +12,16 @@
       "surname": "Doe",
       "imgUrl": "/assets/img/sample-photo-4.jpg",
       "age": 25,
-      "languages": [
+      "skills": [
         {
-          "name": "English",
-          "level": "B2"
-        },
-        {
-          "name": "Russian",
-          "level": "C2"
+          "language": {
+            "id": 1,
+            "name": "English",
+            "code": "gb"
+          },
+          "level": "B2",
+          "rateApprentice": 2,
+          "rateMaster": 0
         }
       ]
     },

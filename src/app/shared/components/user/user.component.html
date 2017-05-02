@@ -1,0 +1,18 @@
+<div class="cn-user__container">
+  <div>
+    <ab-photo src="{{ user.avatarUrl }}"></ab-photo>
+    <div class="cn-user__name">
+      <h3> <a class="ab-link" [routerLink]="['/profile', user.id ]">{{ user.name + " " + user.surname }}</a></h3>
+      <a class="ab-link">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">Message</button>
+          <button type="button" class="btn btn-warning" [routerLink]="['/assign', user.id]" *ngIf="isFriend">Propose a lesson</button>
+          <button type="button" class="btn btn-warning" *ngIf="!isFriend">Connect</button>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div *ngIf="isFriend">
+    X
+  </div>
+</div>

@@ -6,6 +6,7 @@ import { Assignment } from './shared/services/resources/assignment';
 
 import './shared/styles/components/index.scss';
 import './app.component.scss';
+import 'flag-icon-css/css/flag-icon.css';
 
 /*
  * App Component

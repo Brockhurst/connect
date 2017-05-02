@@ -1,26 +1,41 @@
-<!--<div class="panel panel-default">-->
-    <!--<div class="panel-heading">Search for a partner who matches you</div>-->
-    <!--<div class="panel-body">-->
-        <!--<div class="row">-->
-            <!--<div class="col-lg-6">-->
-                <!--<div class="input-group">-->
-                    <!--<select class="form-control" [(ngModel)]="selectedCustomRoot" (change)="onTopicSelect()" name="rootSelect">-->
-                        <!--<option value="0" disabled selected hidden>Select lesson type</option>-->
-                        <!--<option *ngFor="let rootTopic of rootTopics; let i = index; trackBy: trackByFn"-->
-                                <!--[selected]="topicSelected.root === rootTopic.id" [ngValue]="rootTopic.id">-->
-                            <!--{{rootTopic.name}}-->
-                        <!--</option>-->
-                    <!--</select>-->
-                    <!--<input type="text" class="form-control" aria-label="...">-->
-                <!--</div>&lt;!&ndash; /input-group &ndash;&gt;-->
-            <!--</div>&lt;!&ndash; /.col-lg-6 &ndash;&gt;-->
-        <!--</div>&lt;!&ndash; /.row &ndash;&gt;-->
+<div class="panel panel-default">
+    <div class="panel-heading">Search for a partner who matches you</div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-10">
 
-        <!--<ul>-->
-            <!--<li *ngFor="let result of results; let i = index; trackBy: trackByFn">-->
-                <!--<cn-friend [friend]="result"></cn-friend>-->
-            <!--</li>-->
-        <!--</ul>-->
-    <!--</div>-->
-<!--</div>-->
+                <div class="input-group language-group">
+                  <select class="form-control" [(ngModel)]="selectedLanguage" name="languageSelect">
+                      <option value="0" disabled selected hidden>Select language you want to learn</option>
+                      <option *ngFor="let language of languages; let i = index; trackBy: trackByFn"
+                              [selected]="selectedLanguage === language.id" [ngValue]="language.id">
+                          {{language.name}}
+                      </option>
+                  </select>
+
+                  <select class="form-control" [(ngModel)]="selectedLevel" name="levelSelect">
+                    <option value="0" disabled selected hidden>Select level</option>
+                    <option *ngFor="let level of levels; let i = index; trackBy: trackByFn"
+                            [selected]="selectedLevel === level" [ngValue]="level">
+                      {{level}}
+                    </option>
+                  </select>
+
+                </div>
+            </div>
+          <div class="col-sm-2">
+            <button type="button" class="btn btn-default" (click)="find()">Search</button>
+          </div>
+        </div><!-- /.row -->
+
+      <div class="ab-spinner"  *ngIf="results && !results.length">
+        <div class="ab-spinner__element"></div>
+      </div>
+        <ul class="results">
+            <li *ngFor="let result of results; let i = index; trackBy: trackByFn" class="bounceInUp">
+                <cn-user [user]="result" class="animated slideInLeft"></cn-user>
+            </li>
+        </ul>
+    </div>
+</div>
 

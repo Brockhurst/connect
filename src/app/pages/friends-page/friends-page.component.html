@@ -1,11 +1,15 @@
-<div class="panel panel-default">
+<div class="panel panel-default" *ngIf="friends.length">
   <div class="panel-heading">Friends</div>
   <div class="panel-body">
     <ul>
       <li *ngFor="let friend of friends; let i = index; trackBy: trackByFn">
-        <cn-friend [friend]="friend"></cn-friend>
+        <cn-user [user]="friend" [isFriend]="true"></cn-user>
       </li>
     </ul>
   </div>
+</div>
+
+<div class="ab-spinner"  *ngIf="!friends.length">
+  <div class="ab-spinner__element"></div>
 </div>
 

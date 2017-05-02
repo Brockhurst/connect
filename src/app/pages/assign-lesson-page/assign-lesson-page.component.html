@@ -1,7 +1,10 @@
 <div class="panel panel-default step shown">
   <h2>1. Choose who to train with:</h2>
-  <div class="cn-employee">
-    <ab-photo src="{{ assignee.imgUrl }}"></ab-photo>
+  <div class="ab-spinner ab-spinner-small" *ngIf="isUserLoading">
+    <div class="ab-spinner__element"></div>
+  </div>
+  <div class="cn-employee" *ngIf="assignee.id">
+    <ab-photo src="{{ assignee.avatarUrl }}"></ab-photo>
     <h3> <a class="ab-link" [routerLink]="['/profile', assignee.id ]">{{ assignee.name + " " + assignee.surname }}</a></h3>
   </div>
 </div>
@@ -9,21 +12,24 @@
 <div class="panel panel-default step shown">
   <h2>2. Choose language:</h2>
   <div class="dropdown">
-    <select class="form-control" (change)="onLanguageSelect($event)">
+    <select class="form-control" [(ngModel)]="selectedLanguage">
       <option value="0" disabled selected hidden>Language</option>
-      <option *ngFor="let lesson of lessons; let i = index; trackBy: trackByFn">
-        {{lesson}}
+      <option *ngFor="let language of languages; let i = index; trackBy: trackByFn">
+        {{language.name}}
       </option>
     </select>
   </div>
 </div>
 
-<div class="panel panel-default step animated" [class.shown] = "languageSelected" [class.bounceInUp] = "languageSelected">
+<div class="panel panel-default step animated" [class.shown] = "selectedLanguage !== 0" [class.bounceInUp] = "selectedLanguage !== 0">
   <h2>3. Choose topic from recommended:</h2>
   <button type="button" class="btn btn-warning" aria-label="Left Align" (click)="goBack()">
     <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
     <span>Back</span>
   </button>
+  <div class="ab-spinner ab-spinner-small" *ngIf="isTopicLoading">
+    <div class="ab-spinner__element"></div>
+  </div>
   <div class="topic-container">
     <topic *ngFor="let topic of subjectTopics || genreTopics || rootTopics; let i = index; trackBy: trackByFn"
            [topic]="topic"
@@ -45,7 +51,7 @@
 
     <div *ngIf="genreTopics" class="dropdown">
       <select class="form-control" [(ngModel)]="selectedCustomGenre" (change)="onTopicSelect()" name="genreSelect">
-        <option value="0" disabled selected hidden>Select subject genre(or leave blank)</option>
+        <option value="0" disabled selected hidden>Select subject genre</option>
         <option *ngFor="let genreTopic of genreTopics; let i = index; trackBy: trackByFn"
           [selected]="topicSelected.genre === genreTopic.id" [ngValue]="genreTopic.id">
           {{genreTopic.name}}
@@ -64,7 +70,7 @@
   </form>
 </div>
 
-<div class="panel panel-default step shown" *ngIf="topicSelected.id || topicSelected.customName">
+<div class="panel panel-default step shown" [class.shown]="topicSelected.id || topicSelected.customName" [class.bounceInUp] = "topicSelected.id || topicSelected.customName">
   <h2>4. Choose date and time of your lesson:</h2>
 
   <form id="ngForm" (ngSubmit)="submitLesson(timingForm)" #timingForm="ngForm">

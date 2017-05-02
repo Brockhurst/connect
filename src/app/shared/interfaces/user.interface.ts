@@ -3,7 +3,15 @@ export interface IUser {
   name: string;
   surname: string;
   age: number;
-  imgUrl?: string;
+  avatarUrl?: string;
+  languages?: ILang[]
+}
+
+interface ILang {
+  level: string;
+  rateApprentice: number;
+  rateMaster: number;
+  language: any;
 }
 
 
@@ -11,5 +19,5 @@ export interface IUserShort {
   id?: number;
   name: string;
   surname: string;
-  imgUrl?: string;
+  avatarUrl?: string;
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MyDatePickerModule } from 'mydatepicker';
+import { RatingModule } from 'ngx-bootstrap';
 
 import { CheckboxComponent } from './checkbox';
 import { CheckItemComponent } from './check-item';
@@ -25,7 +26,7 @@ import { DateComponent } from './date';
 import { PeriodComponent } from './period';
 import { LanguageComponent } from './language';
 import { RatingComponent } from './rating';
-import { FriendComponent } from './friend';
+import { UserComponent } from './user';
 import { TopicComponent } from './topic';
 
 const components = [
@@ -50,7 +51,7 @@ const components = [
   PeriodComponent,
   LanguageComponent,
   RatingComponent,
-  FriendComponent,
+  UserComponent,
   TopicComponent
 ];
 
@@ -59,7 +60,8 @@ const components = [
     CommonModule,
     FormsModule,
     RouterModule,
-    MyDatePickerModule
+    MyDatePickerModule,
+    RatingModule
   ],
   declarations: components,
   exports: components

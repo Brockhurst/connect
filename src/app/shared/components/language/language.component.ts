@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { ILanguage } from 'app/shared/interfaces/language.interface';
-
 import './language.component.scss';
 
 @Component({
@@ -10,5 +8,7 @@ import './language.component.scss';
   templateUrl: 'language.component.html'
 })
 export class LanguageComponent {
-  @Input() public language: ILanguage;
+  @Input() public skill;
+
+  public max = 5;
 }

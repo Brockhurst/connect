@@ -1,5 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
+import { Lesson } from 'app/shared/services/resources/lesson';
 
 import './lesson-page.component.scss';
 
@@ -16,13 +18,27 @@ export class LessonPageComponent {
     anotherid;
     mypeerid;
 
+    constructor(private route: ActivatedRoute, private lessonService: Lesson) {
+
+    }
+
     ngOnInit() {
+        let id = this.route.snapshot.params['id'];
+
         let video = this.myVideo.nativeElement;
         this.peer = new Peer({key: 'vs0v3agzz2jfw29'});
 
         setTimeout(() => {
-            console.log(this.peer.id);
-            this.mypeerid = this.peer.id;
+          console.log(this.peer.id);
+          this.lessonService.get({id}).$observable.subscribe(lesson => {
+            if (!lesson.roomId) {
+              this.lessonService.setRoomId({lessonId: id, roomId: this.peer.id});
+            } else {
+              this.videoconnect(lesson.roomId);
+            }
+          });
+
+          this.mypeerid = this.peer.id;
         }, 3000);
 
         this.peer.on('connection', function (conn) {
@@ -57,10 +73,9 @@ export class LessonPageComponent {
         });
     }
 
-    videoconnect() {
+    videoconnect(fname) {
         let video = this.myVideo.nativeElement;
         var localvar = this.peer;
-        var fname = this.anotherid;
 
         //var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
