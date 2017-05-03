@@ -29,7 +29,7 @@ export class LessonPageComponent {
         let id = this.route.snapshot.params['id'];
 
         let video = this.myVideo.nativeElement;
-        this.peer = new Peer(id, {key: 'vs0v3agzz2jfw29'});
+        this.peer = new Peer(2, {key: 'vs0v3agzz2jfw29'});
 
         setTimeout(() => {
           this.lessonService.get({id}).$observable.subscribe(lesson => {
@@ -39,12 +39,13 @@ export class LessonPageComponent {
             if (!lesson.roomId) {
               this.lessonService.setRoomId({lessonId: id, roomId: this.peer.id});
             } else {
-              this.videoconnect(lesson.roomId);
+              this.videoconnect(1);
             }
           });
 
           this.mypeerid = this.peer.id;
         }, 3000);
+
 
         this.peer.on('connection', function (conn) {
             conn.on('data', function (data) {
