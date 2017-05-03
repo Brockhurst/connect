@@ -1,6 +1,7 @@
 @import '~variables';
 
 .topic {
+  position: relative;
   padding: 20px 10px;
   min-width: 350px;
   margin-right: 20px;
@@ -23,5 +24,11 @@
       width: 100px;
       height: 100px;
     }
+  }
+
+  .glyphicon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
   }
 }

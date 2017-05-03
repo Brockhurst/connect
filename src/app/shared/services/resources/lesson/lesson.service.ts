@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { ResourceParams, ResourceCRUD, ResourceAction, ResourceMethod } from 'ng2-resource-rest';
 import { Http, RequestMethod } from '@angular/http';
-import { ApiSettings } from 'app/shared/services/api-settings-rud';
+import { ApiSettings } from 'app/shared/services/api-settings';
 import { ILesson } from 'app/shared/interfaces/lesson.interface';
 
 interface IQueryInput {

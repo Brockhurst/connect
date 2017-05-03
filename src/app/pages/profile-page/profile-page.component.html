@@ -27,6 +27,9 @@
   </div>
   <div class="row">
     <h2>I want to learn:</h2>
+    <ul class="col-sm-12 list-group">
+      <li class="list-group-item" *ngFor="let skill of user.skillsWished; let i = index; trackBy: trackByFn"><cn-lang [skill]="skill"></cn-lang></li>
+    </ul>
   </div>
   <div class="row cn-profile-page__about">
     <div class="panel panel-default">

@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { ResourceParams, ResourceCRUD, ResourceAction, ResourceMethod } from 'ng2-resource-rest';
 import { Http } from '@angular/http';
-import { ApiSettings } from 'app/shared/services/api-settings-rud';
+import { ApiSettings } from 'app/shared/services/api-settings';
 import { ITopic } from 'app/shared/interfaces/topic.interface';
 
 interface IQueryInput {}
@@ -19,11 +19,17 @@ export class Topic extends ResourceCRUD<IQueryInput, ITopic, ITopic> {
     isArray: true,
     path: '/root'
   })
-  getRoot: ResourceMethod<IQueryInput, ITopic[]>
+  getRoot: ResourceMethod<IQueryInput, ITopic[]>;
 
   @ResourceAction({
     isArray: true,
     path: '/{!id}/children'
   })
-  getChildren: ResourceMethod<{id: any}, ITopic[]>
+  getChildren: ResourceMethod<{id: any}, ITopic[]>;
+
+  @ResourceAction({
+    isArray: true,
+    path: '/trending'
+  })
+  getTrending: ResourceMethod<IQueryInput, ITopic[]>
 }

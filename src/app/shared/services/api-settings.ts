@@ -1,3 +1,3 @@
 export const ApiSettings = {
-  API_ENDPOINT: 'http://localhost:3004' // TODO: replace with real server
+  API_ENDPOINT: 'http://xn--e1ajbkae6a.azurewebsites.net/api'
 };

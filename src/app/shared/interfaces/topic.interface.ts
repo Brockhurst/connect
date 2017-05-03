@@ -3,6 +3,7 @@ export interface ITopic {
   name: string;
   recommended: boolean;
   relevant: boolean;
-  url?: string;
+  sourceUrl?: string;
   imageUrl?: string;
+  parentId?: number;
 }

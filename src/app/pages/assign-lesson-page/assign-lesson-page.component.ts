@@ -38,6 +38,9 @@ export class AssignLessonPageComponent {
   public selectedCustomGenre = 0;
   public selectedCustomRoot = 0;
 
+  public customSourceUrl: string;
+  public customImageUrl: string;
+
   constructor(private userService: User,
               private lessonService: Lesson,
               private languageService: Language,
@@ -113,32 +116,50 @@ export class AssignLessonPageComponent {
   }
 
   submitLesson(timingForm) {
-    const isTopicSelected = !!(this.topicSelected.id || this.topicSelected.name);
-
-    if (isTopicSelected && timingForm.valid) {
-      this.lessonService.save({
-        languageId: this.selectedLanguage,
-        startDateTime: this.startDateTime,
-        duration: this.duration,
-        userApprenticeId: this.assignee.id,
-        userMasterId: currentUser.id
-      }).$observable
-        .subscribe(() => {
-          let dialog = this.modal.confirm()
-            .size('sm')
-            .isBlocking(true)
-            .keyboard(27)
-            .title('Success')
-            .body('Lesson submitted successfully! You can now view it in your lessons tab.')
-            .open();
-
-          dialog.then((resultPromise) => {
-            return resultPromise.result.then(() => {
-              this.router.navigate(['/lessons'])
-            });
-          });
-
-        });
+    if (!timingForm.valid) {
+      return;
     }
+
+    if (this.topicSelected.name) {
+      this.topicService.save({
+        name: this.topicSelected.name,
+        parentId: this.topicSelected.genre,
+        recommended: false,
+        relevant: false,
+        imageUrl: this.customImageUrl,
+        sourceUrl: this.customSourceUrl
+      }).$observable.subscribe(data => {
+        this.saveLesson(data.id);
+      })
+    } else if (this.topicSelected.id) {
+      this.saveLesson(this.topicSelected.id);
+    }
+  }
+
+  saveLesson(topicId) {
+    this.lessonService.save({
+      languageId: this.selectedLanguage,
+      startDateTime: this.startDateTime,
+      duration: this.duration,
+      userApprenticeId: this.assignee.id,
+      userMasterId: currentUser.id,
+      topicId
+    }).$observable
+      .subscribe(() => {
+        let dialog = this.modal.confirm()
+          .size('sm')
+          .isBlocking(true)
+          .keyboard(27)
+          .title('Success')
+          .body('Lesson submitted successfully! You can now view it in your lessons tab.')
+          .open();
+
+        dialog.then((resultPromise) => {
+          return resultPromise.result.then(() => {
+            this.router.navigate(['/lessons'])
+          });
+        });
+
+      });
   }
 }

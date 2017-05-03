@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { Topic } from 'app/shared/services/resources/topic';
+import { Language } from 'app/shared/services/resources/language';
+
+import { ILanguage } from 'app/shared/interfaces/language.interface';
+import { ITopic } from 'app/shared/interfaces/topic.interface';
 
 import './main-page.component.scss';
 
@@ -9,4 +14,12 @@ import './main-page.component.scss';
 })
 export class MainPageComponent {
 
+  public simplestLanguages: ILanguage[];
+  public trendingTopics: ITopic[];
+
+  constructor(private languageService: Language, private topicService: Topic) {
+    console.log(languageService.getSimplest());
+    this.simplestLanguages = languageService.getSimplest();
+    this.trendingTopics = topicService.getTrending();
+  }
 }

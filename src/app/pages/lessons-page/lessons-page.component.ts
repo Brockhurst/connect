@@ -1,4 +1,4 @@
-import { Component, ViewChild, NgZone, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { CalendarComponent } from "ap-angular2-fullcalendar/src/calendar/calendar";
@@ -20,6 +20,8 @@ export class LessonsPageComponent {
 
   @ViewChild('myCal', { read: ElementRef }) myCal: ElementRef;
 
+  public isLoading: boolean = true;
+
   options = {
     fixedWeekCount : false,
     eventLimit: true,
@@ -27,7 +29,7 @@ export class LessonsPageComponent {
   };
   events;
 
-  constructor(private lessonService: Lesson, private usersService: User, private zone: NgZone) {
+  constructor(private lessonService: Lesson, private usersService: User) {
     this.getConfig();
   }
 
@@ -39,6 +41,8 @@ export class LessonsPageComponent {
           start: lesson.startDateTime
         }
       });
+
+      this.isLoading = false;
 
       $(this.myCal.nativeElement).fullCalendar('addEventSource', this.options.events);
     });

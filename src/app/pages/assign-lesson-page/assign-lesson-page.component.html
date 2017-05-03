@@ -14,7 +14,7 @@
   <div class="dropdown">
     <select class="form-control" [(ngModel)]="selectedLanguage">
       <option value="0" disabled selected hidden>Language</option>
-      <option *ngFor="let language of languages; let i = index; trackBy: trackByFn">
+      <option *ngFor="let language of languages; let i = index; trackBy: trackByFn" [(ngValue)]="language.id">
         {{language.name}}
       </option>
     </select>
@@ -63,14 +63,26 @@
       <label for="subject-name">Enter subject name:</label>
       <div class="input-group">
         <input type="text" class="form-control" id="subject-name" aria-describedby="basic-addon3"
-               [(ngModel)]="topicSelected.customName" name="custom-name">
+               [(ngModel)]="topicSelected.name" name="custom-name">
+      </div>
+
+      <label for="subject-source-url">Provide material url(or leave blank)</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="subject-source-url" aria-describedby="basic-addon3"
+               [(ngModel)]="topicSelected.customSourceUrl" name="source-url">
+      </div>
+
+      <label for="subject-image-url">Please provide image for the topic(or leave blank)</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="subject-image-url" aria-describedby="basic-addon3"
+               [(ngModel)]="topicSelected.customImageUrl" name="image-url">
       </div>
     </div>
 
   </form>
 </div>
 
-<div class="panel panel-default step shown" [class.shown]="topicSelected.id || topicSelected.customName" [class.bounceInUp] = "topicSelected.id || topicSelected.customName">
+<div class="panel panel-default step shown" [class.shown]="topicSelected.id || topicSelected.name" [class.bounceInUp] = "topicSelected.id || topicSelected.name">
   <h2>4. Choose date and time of your lesson:</h2>
 
   <form id="ngForm" (ngSubmit)="submitLesson(timingForm)" #timingForm="ngForm">
@@ -91,6 +103,6 @@
 
 </div>
 
-<button *ngIf="startDateTime && duration && (topicSelected.id || topicSelected.customName)"
+<button *ngIf="startDateTime && duration && (topicSelected.id || topicSelected.name)"
         form="ngForm"
         class="btn btn-info submitButton">Submit lesson request</button>

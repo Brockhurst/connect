@@ -26,7 +26,11 @@
     <div class="panel panel-default">
       <div class="panel-heading pan-header">Trending topics this week</div>
       <div class="panel-body">
-        Panel content
+        <div class="ab-spinner ab-spinner-small"  *ngIf="!trendingTopics.length">
+          <div class="ab-spinner__element"></div>
+        </div>
+        <topic *ngFor="let topic of trendingTopics; let i = index; trackBy: trackByFn"
+               [topic]="topic"></topic>
       </div>
     </div>
   </div>
@@ -34,7 +38,16 @@
     <div class="panel panel-default">
       <div class="panel-heading pan-header">Most difficult languages</div>
       <div class="panel-body">
-        Panel content
+        <div class="ab-spinner ab-spinner-small"  *ngIf="!simplestLanguages.length">
+          <div class="ab-spinner__element"></div>
+        </div>
+        <ul>
+          <li *ngFor="let language of simplestLanguages; let i = index; trackBy: trackByFn">
+            <span class="flag-icon" [ngClass]="'flag-icon-' + skill.language.code"></span>
+            <h3 class="lang-name">{{ skill.language.name }}</h3>
+          </li>
+        </ul>
+        <div ></div>
       </div>
     </div>
   </div>

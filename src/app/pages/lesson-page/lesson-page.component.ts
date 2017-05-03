@@ -14,6 +14,9 @@ export class LessonPageComponent {
 
     @ViewChild('myvideo') myVideo: any;
 
+    public isLoading:boolean = true;
+    public lesson;
+
     peer;
     anotherid;
     mypeerid;
@@ -26,11 +29,13 @@ export class LessonPageComponent {
         let id = this.route.snapshot.params['id'];
 
         let video = this.myVideo.nativeElement;
-        this.peer = new Peer({key: 'vs0v3agzz2jfw29'});
+        this.peer = new Peer(id, {key: 'vs0v3agzz2jfw29'});
 
         setTimeout(() => {
-          console.log(this.peer.id);
           this.lessonService.get({id}).$observable.subscribe(lesson => {
+            this.lesson = lesson;
+            this.isLoading = false;
+
             if (!lesson.roomId) {
               this.lessonService.setRoomId({lessonId: id, roomId: this.peer.id});
             } else {
