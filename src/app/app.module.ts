@@ -28,6 +28,7 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 
 import { NotFoundPageModule } from './pages/not-found-page';
+import { LoginPageModule } from './pages/login-page';
 import { MainPageModule } from './pages/main-page';
 import { ProfilePageModule } from './pages/profile-page';
 import { FriendsPageModule } from './pages/friends-page';
@@ -69,6 +70,7 @@ type StoreType = {
     PartnersPageModule,
     LessonPageModule,
     NotFoundPageModule,
+    LoginPageModule,
     BrowserModule,
     FormsModule,
     HttpModule,

@@ -1,5 +1,5 @@
 <div class="topic" (click)="selectTopic()" [class.selected] = "selected">
-  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+  <span *ngIf="icon" class="glyphicon" [ngClass]="'glyphicon-' + icon" aria-hidden="true"></span>
   <div class="topic-photo">
     <ab-photo *ngIf="topic.imgUrl" src="{{topic.imgUrl}}"></ab-photo>
   </div>

@@ -35,12 +35,23 @@ export class LessonsPageComponent {
 
   getConfig() {
     this.lessonService.getCurrentLessons({userId: currentUser.id}).$observable.subscribe(data => {
-      this.options.events = data.apprenticeLessons.map((lesson) => {
+      this.options.events = this.options.events.concat(data.apprenticeLessons.map((lesson) => {
         return {
-          title: 'Lesson',
+          title: lesson.language + ' lesson',
+          start: lesson.startDateTime,
+          url: '/lesson/' + lesson.id,
+          color: 'yellow',
+          textColor: 'black'
+        }
+      }));
+
+      this.options.events = this.options.events.concat(data.apprenticeLessons.map((lesson) => {
+        return {
+          title: lesson.language + ' lesson',
+          url: '/lesson/' + lesson.id,
           start: lesson.startDateTime
         }
-      });
+      }));
 
       this.isLoading = false;
 
